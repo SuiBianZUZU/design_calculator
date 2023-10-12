@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>人民币大写在线转换工具 - php中文网在线小工具</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="style.css-1.4.css" tppabs="https://www.php.cn/static/xiazai/css/style.css?1.4"  media="all">
+<script src="layer.js" tppabs="https://www.php.cn/static/layer/layer.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="tool.css" tppabs="https://www.php.cn/static/xiazai/tool/tool.css">
+<script type="text/javascript" src="rmb.js" tppabs="https://www.php.cn/static/xiazai/tool/rmb.js"></script>
+</head>
+<body>
+
+<script>
+    $(window).scroll(function() {
+        var height =document.documentElement.scrollTop;
+        if(height>80)
+        {
+            $('.top').css('top','0px');
+            $('.download-class').css('top','50px');
+        }
+        else
+        {
+            h = 80-parseInt(height);
+            h2 = 130-parseInt(height);
+            $('.top').css('top',h+'px');
+            $('.download-class').css('top',h2+'px');
+
+        }
+    })
+</script>
+<script src="fc8f4c079d4a63b5a531677a38c84d0f.html" tppabs="https://sw.php.cn/hezuo/fc8f4c079d4a63b5a531677a38c84d0f.html"></script>
+
+		</div>
+	</div>
+	<div class="phpcn-col-md10 list-right">
+		<div class="tool-title phpcn-mt-20">
+	      <h1>人民币大写在线转换工具</h1>
+	      <div class="zuozhe">在线人民币大写在线转换工具</div>
+	    </div>
+		
+		<dl class="phpcn-col-space15 phpcn-clear">
+		
+			<div class="toolcode">
+			<p>转换方法：输入人民币金额的小写阿拉伯数字，例如1688.99，然后点击“转换为大写金额”按钮即可得转换成汉字。在输入数字的时候，可以包含小数点，也可以写成千进制，例如1,688.99（注意是英文逗号，而不是中文逗号）。</p>
+			<p>&nbsp;</p>
+			<p>小写金额：<br>
+				¥
+				<input name="Digits" type="text" class="tooltext" id="Digits" value="2,381.55" size="40">
+				<input id="Convert" type="button" class="bt-green" value="转换为大写金额" name="Convert" onclick="Result.value = convertCurrency(Digits.value);">
+			</p>
+			<div style="clear:both"></div><br>
+
+			<p>大写金额：
+				<textarea name="Result" type="text" class="toolarea" style="color:#333;font-size:28px;height:36px" id="Result"></textarea>
+			</p>
+			<p>&nbsp;</p>
+			<p>人民币金额用到的中文大写汉字如下：<br>
+				<strong>零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿。 </strong></p>
+			<p>&nbsp;</p>
+			<p>人民币符号为：<strong>¥ </strong></p>
+			<p>书写顺序为先写大写字母“Y”，再在竖划上加上二横，即为“¥”，读音为：yuán（音：元）。</p>
+			<p>在阿拉伯数字金额首位之前加一个“¥”符号，既可防止在金额前填加数字，又可表明是人民币的金额数量。由于“¥”本身表示人民币的单位“元”，所以，凡是在金额前加了“¥ ”符号的，金额后就不需要再加“元”字。</p>
+			<p>忘记怎么打的时候可以来这里复制噢~ <br>
+			</p>
+		</div>	
+</body>
+</html>

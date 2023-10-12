@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html data-theme="winter">
+
+<head>
+    <meta charset="utf-8">
+    <title>随便组组</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css-1.4.css" tppabs="https://www.php.cn/static/xiazai/css/style.css?1.4"
+        media="all">
+    <script src="layer.js" tppabs="https://www.php.cn/static/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="tool.css" tppabs="https://www.php.cn/static/xiazai/tool/tool.css">
+    <script type="text/javascript" src="static/js/rmb.js"
+        tppabs="https://www.php.cn/static/xiazai/tool/rmb.js"></script>
+    <video src="static/video/vid.mp4" class="bji" autoplay loop muted></video>
+</head>
+
+<body>
+    <div id="main" class="Main">
+        <!-- <button class="btn glass">Glass button</button> -->
+        <div class="navbar bg-base-300 rounded-box">
+            <div class="flex-1 px-2 lg:flex-none">
+                <a class="text-lg font-bold">CalcuPro</a>
+            </div>
+            <div class="flex justify-end flex-1 px-2">
+                <div class="flex items-stretch">
+                    <a data-theme="winter" class="btn btn-outline" href="/index.html">基础计算器</a>
+                    <a data-theme="winter" class="btn btn-outline btn-primary" href="exchange.html">汇率转换器</a>
+                    <a data-theme="winter" class="btn btn-outline btn-secondary" href="programmer.html">Jasypt加/解密器</a>
+                    <a data-theme="winter" class="btn btn-outline btn-accent" href="kinship.html">称呼计算器</a>
+                </div>
+            </div>
+        </div>
+
+        <body>
+            <div class="exchange-rate" style="margin-left:200px;float: left;">
+                <h1>汇率查询</h1>
+                <br>
+                <div class="exchange-rate1">
+                    <label for="baseCurrency">基准货币：</label>
+                    <select id="baseCurrency">
+                        <option value="CNY">人民币 (CNY)</option>
+                        <option value="USD">美元 (USD)</option>
+                        <option value="EUR">欧元 (EUR)</option>
+                        <option value="JPY">日元 (JPY)</option>
+                        <option value="TWD">新台币 (TWD)</option>
+                        <option value="GBP">英镑 (GBP)</option>
+                        <option value="AUD">澳元 (AUD)</option>
+                        <option value="CAD">加拿大元 (CAD)</option>
+                        <option value="CHF">瑞士法郎 (CHF)</option>
+                        <option value="NZD">新西兰元 (NZD)</option>
+                        <option value="HKD">港元 (HKD)</option>
+                        <option value="SGD">新加坡元 (SGD)</option>
+                        <option value="KRW">韩元 (KRW)</option>
+                        <option value="THB">泰铢 (THB)</option>
+                        <option value="MVR">马尔代夫拉菲亚 (MVR)</option>
+                        <option value="NOK">挪威克朗 (NOK)</option>
+                        <option value="MMK">缅甸元 (MMK)</option>
+                        <option value="MYR">马来西亚林吉特 (MYR)</option>
+                        <option value="INR">印度卢比 (INR)</option>
+                        <option value="ZAR">南非兰特 (ZAR)</option>
+                        <option value="BND">文莱元 (BND)</option>
+                        <option value="DKK">丹麦克朗 (DKK)</option>
+                        <option value="EGP">埃及镑 (EGP)</option>
+                        <option value="HUF">匈牙利福林 (HUF)</option>
+                        <option value="IDR">印度尼西亚卢比 (IDR)</option>
+                        <option value="ISK">冰岛克朗 (ISK)</option>
+                        <!-- 其他货币选项 -->
+                    </select>
+                    <br>
+                    <br>
+                    <label for="targetCurrency">目标货币：</label>
+                    <select id="targetCurrency">
+                        <option value="USD">美元 (USD)</option>
+                        <option value="CNY">人民币 (CNY)</option>
+                        <option value="EUR">欧元 (EUR)</option>
+                        <option value="JPY">日元 (JPY)</option>
+                        <option value="TWD">新台币 (TWD)</option>
+                        <option value="GBP">英镑 (GBP)</option>
+                        <option value="AUD">澳元 (AUD)</option>
+                        <option value="CAD">加拿大元 (CAD)</option>
+                        <option value="CHF">瑞士法郎 (CHF)</option>
+                        <option value="NZD">新西兰元 (NZD)</option>
+                        <option value="HKD">港元 (HKD)</option>
+                        <option value="SGD">新加坡元 (SGD)</option>
+                        <option value="KRW">韩元 (KRW)</option>
+                        <option value="THB">泰铢 (THB)</option>
+                        <option value="MVR">马尔代夫拉菲亚 (MVR)</option>
+                        <option value="NOK">挪威克朗 (NOK)</option>
+                        <option value="MMK">缅甸元 (MMK)</option>
+                        <option value="MYR">马来西亚林吉特 (MYR)</option>
+                        <option value="INR">印度卢比 (INR)</option>
+                        <option value="ZAR">南非兰特 (ZAR)</option>
+                        <option value="BND">文莱元 (BND)</option>
+                        <option value="DKK">丹麦克朗 (DKK)</option>
+                        <option value="EGP">埃及镑 (EGP)</option>
+                        <option value="HUF">匈牙利福林 (HUF)</option>
+                        <option value="IDR">印度尼西亚卢比 (IDR)</option>
+                        <option value="ISK">冰岛克朗 (ISK)</option>
+                        <!-- 其他货币选项 -->
+                    </select>
+                    <br>
+                    <br>
+                    <label for="amount">货币数量：</label>
+                    <input type="number" id="amount" min="0" step="0.01" />
+                    <br>
+                    <button class="btn btn-success btn-sm" onclick="getExchangeRate()">查询</button>
+                    <br>
+                    <br>
+                    <div class="res" id="result"></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="exchange-money" style="margin-right:200px;float: right;">
+                <h1>金额转换</h1>
+                <br>
+                <div class="exchange-rate1">
+                    <label for="baseCurrency">小写金额¥：</label>
+                    <br><br>
+                    <input type="text" id="Digits" value="" style="border:1px solid black;width:200px;height: 30px;">
+                </div>
+
+                <div>
+                    <button class="btn btn-success btn-sm" style="width:180px;"
+                        onclick="document.getElementById('Result').value = convertCurrency(document.getElementById('Digits').value)">
+                        转换为大写金额
+                    </button>
+                </div>
+                <div class="exchange-rate1">
+                    <label for="baseCurrency">大写金额：</label>
+                    <br><br>
+                    <textarea id="Result"
+                        style="color:#333;border:1px solid black;font-size:20px;width:250px;height: 120px;text-align: center;"
+                        readonly></textarea>
+                </div>
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                function getExchangeRate() {
+                    var baseCurrency = $("#baseCurrency").val();
+                    var targetCurrency = $("#targetCurrency").val();
+                    var amount = parseFloat($("#amount").val());
+
+                    if (isNaN(amount) || amount <= 0) {
+                        $("#result").text("请输入有效的货币数量");
+                        return;
+                    }
+
+                    $.ajax({
+                        url: `https://v6.exchangerate-api.com/v6/55c4cf27ff12f727fc9e2746/latest/${baseCurrency}`,
+                        type: "GET",
+                        success: function (data) {
+                            var exchangeRate = data.conversion_rates[targetCurrency];
+                            var convertedAmount = (amount * exchangeRate).toFixed(2); // 保留两位小数
+                            var result = `${amount} ${baseCurrency} = ${convertedAmount} ${targetCurrency}`;
+                            $("#result").text(result);
+                        },
+                        error: function () {
+                            $("#result").text("查询失败，请稍后再试！");
+                        }
+                    });
+                }
+            </script>
+        </body>
+    </div>
+    <div>
+
+        <div class="flex-container">
+            <div class="spinner">
+                <p>
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+                Loading...
+
+            </div>
+            <div class="flex-slide home">
+                <div class="flex-title flex-title-home">1948</div>
+                <div class="flex-about flex-about-home" style="font-size: 18px;">
+                    <p>第一套人民币基于解放战争新中国成立的时代背景，在人民币图案的选取上偏向经济建设与新时代社会人们的生活情况。人民币的票面上取消了英文，不再采用行长的签字，而采用印章。正面所印的年号用“中华民国三十七年”，背面使用公元纪年1948。第一套人民币于1955年5月10日起停止流通。
+                    </p>
+                </div>
+            </div>
+            <div class="flex-slide about">
+                <div class="flex-title">1955</div>
+                <div class="flex-about flex-about-home" style="font-size: 18px;">
+                    <p>第二套人民币在币面的图案选择上以社会主义建设为主，着重表现中国共产党的革命斗争与民族团结。共有10种面值，分别是1分、2分、5分、1角、2角、5角、1元、2元、3元和5元，1957年12月1日又发行了面值为10元的人民币。同时，为便于流通，还发行了1分、2分、5分三种硬币，与纸分币等值进行流通，这是人民币硬币发行的开端。
+                    </p>
+                </div>
+            </div>
+            <div class="flex-slide work">
+                <div class="flex-title">1962</div>
+                <div class="flex-about flex-about-home" style="font-size: 18px;">
+                    <p>第三套人民币的设计图案比较集中地反映了当时我国国民经济以农业为基础，以工业为主导，工农轻重并举的方针。共有1角、2角、5角、1元、
+                        2元、5元、10元7种面额，分币仍采用第二套的方式。第三套人民币的票面额与第二套人民币的票面额等值，在市场上混合流通。
+                    </p>
+                </div>
+            </div>
+            <div class="flex-slide contact">
+                <div class="flex-title">1987</div>
+                <div class="flex-about flex-about-home" style="font-size: 18px;">
+                    <p>第四套人民币设计的主题是：全国各族人民在中国共产党的领导下，精神焕发，为建设社会主义现代化国家而努力奋斗。第四套人民币在1元以上的主币上增印了盲文符号，体现出党和政府对残疾人的关心。同时还吸收了国家对汉字整理和简化的成果，在票面上全部采用了规范化汉字，但字体仍沿用马文蔚的“张黑女”碑体。
+                    </p>
+                </div>
+            </div>
+            <div class="flex-slide home2">
+                <div class="flex-title flex-title-home">1999</div>
+                <div class="flex-about flex-about-home" style="font-size: 18px;">
+                    <p>第五套人民币与第四套人民币相比，防伪技能由10多种增加到20多种。主景人像、水印、面额数字都比以前有所放大，尤其是突出用阿拉伯数字表示的面额，便于群众识别。每种面额的人民币正面都采用毛泽东在新中国成立初期的头像，底衬采用了中国著名的花卉图案，背面主景图案选用了有代表性的寓有民族特色的图案，充分表现出中国悠久的历史和壮丽的山河，弘扬了中国伟大的民族文化。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src='static/js/jquery.min.js'></script>
+        <script src='static/js/jquery.waitforimages.min.js'></script>
+        <script src="static/js/script.js"></script>
+
+    </div>
+</body>
+
+</html>
+
+<style>
+    .bji {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        object-fit: cover;
+    }
+
+    .Main {
+        margin-bottom: 460px;
+    }
+
+    .exchange-rate {
+        width: 300px;
+        height: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(166, 214, 222, 0.12);
+        /* 设置容器背景颜色 */
+        margin: auto;
+        /* 自动居中页面 */
+        margin-top: 50px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .exchange-money {
+        width: 300px;
+        height: 400px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(166, 214, 222, 0.12);
+        /* 设置容器背景颜色 */
+        margin: auto;
+        /* 自动居中页面 */
+        margin-top: -9px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .exchange-rate1 {
+        font-size: 15px;
+        margin-bottom: 12px;
+        margin-top: 12px;
+    }
+
+    .res {
+        font-size: 18px;
+    }
+
+    select,
+    input[type="number"],
+    button {
+        width: 100%;
+        margin-top: 5px;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #333;
+        border-radius: 3px;
+    }
+
+    .tooltext {
+        width: 60%;
+        /* 调整文本框的宽度 */
+        font-size: 16px;
+        padding: 5px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    .bt-green {
+        font-size: 16px;
+        padding: 5px 10px;
+        background: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .toolarea {
+        width: 60%;
+        /* 调整文本域的宽度 */
+        font-size: 20px;
+        height: 60px;
+        /* 调整文本域的高度 */
+        margin: auto;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        margin: auto;
+    }
+
+    body {
+        font: 15px/1.3 'Open Sans', sans-serif;
+        color: #5e5b64;
+        text-align: center;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font: 15px/1.3 'Open Sans', sans-serif;
+        color: #5e5b64;
+        text-align: center;
+    }
+
+    a,
+    a:visited {
+        outline: none;
+        color: #389dc1;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    section,
+    footer,
+    header,
+    aside,
+    nav {
+        display: block;
+    }
+
+    /*-------------------------
+        菜鸟
+    --------------------------*/
+
+    nav {
+        display: inline-block;
+        margin: 30px auto 45px;
+        background-color: #5597b4;
+        box-shadow: 0 1px 1px #ccc;
+        border-radius: 2px;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 18px 30px;
+        color: #fff !important;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none !important;
+        line-height: 1;
+        text-transform: uppercase;
+        background-color: transparent;
+
+        -webkit-transition: background-color 0.25s;
+        -moz-transition: background-color 0.25s;
+        transition: background-color 0.25s;
+    }
+
+    nav a:first-child {
+        border-radius: 2px 0 0 2px;
+    }
+
+    nav a:last-child {
+        border-radius: 0 2px 2px 0;
+    }
+
+    nav.basic .basic,
+    nav.exchange .exchange,
+    nav.programmer .programmer,
+    nav.kinship .kinship {
+        background-color: #e35885;
+    }
+
+    p {
+        font-size: 22px;
+        font-weight: bold;
+        color: #7d9098;
+    }
+
+    p b {
+        color: #ffffff;
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #c4d7e0;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+</style>
